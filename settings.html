@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Prototype - KPI Builder untuk UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#020617",
+              night: "#0f172a",
+              panel: "#111c34",
+              line: "#1e293b",
+              glow: "#22d3ee",
+              brand: "#38bdf8",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(34,211,238,.16), 0 20px 60px rgba(56,189,248,.14)",
+            },
+            backgroundImage: {
+              grid: "linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-ink font-sans text-slate-100 antialiased">
+    <div class="relative min-h-screen overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,.14),_transparent_24%),radial-gradient(circle_at_top_right,_rgba(99,102,241,.16),_transparent_26%),linear-gradient(180deg,_#020617_0%,_#0f172a_52%,_#020617_100%)]"></div>
+      <div class="absolute inset-0 bg-grid bg-[size:64px_64px] opacity-20"></div>
+
+      <header class="relative z-10 border-b border-slate-800/80 bg-slate-950/70 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <div class="flex items-center gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+              <span class="flex rounded-2xl border border-cyan-400/20 bg-white/95 p-1.5 shadow-glow">
+                <img src="assets/images/hrcofy-logo.jpg" alt="Logo HRCofy" class="h-10 w-auto rounded-xl object-contain" />
+              </span>
+              <div>
+                <p class="text-sm font-semibold tracking-[0.22em] text-cyan-300">HRCOFY</p>
+                <p class="text-xs text-slate-400">Settings Prototype</p>
+              </div>
+            </a>
+            <nav class="hidden items-center gap-6 text-sm text-slate-300 xl:flex">
+              <a href="dashboard.html" class="transition hover:text-cyan-300">Dashboard</a>
+              <a href="kpi-tree.html" class="transition hover:text-cyan-300">KPI Tree</a>
+              <a href="kpi-detail.html" class="transition hover:text-cyan-300">KPI Detail</a>
+              <a href="builder.html" class="transition hover:text-cyan-300">Builder</a>
+              <a href="settings.html" class="text-cyan-300">Settings</a>
+            </nav>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="hidden rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 lg:block">
+              Visual Placeholder Only
+            </div>
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-sm font-semibold text-white">
+              YD
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="relative z-10 mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-10">
+        <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Settings Prototype</p>
+              <h1 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">Atur profil bisnis dan struktur KPI tanpa backend.</h1>
+              <p class="mt-4 text-base leading-7 text-slate-300">
+                Halaman ini berfungsi sebagai placeholder pengaturan visual untuk menunjukkan bagaimana bisnis dapat mengelola profil, kategori KPI, periode review, struktur tim, dan opsi export pada fase berikutnya.
+              </p>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-2 xl:w-[22rem] xl:grid-cols-1">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Business Scope</p>
+                <p class="mt-2 text-sm font-medium text-white">UMKM Demo • Retail &amp; F&amp;B</p>
+              </div>
+              <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Current Setup</p>
+                <p class="mt-2 text-sm font-medium text-white">KPI structure aktif untuk objective profitabilitas.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-8 grid gap-6 xl:grid-cols-[1fr_1fr]">
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Business Profile</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Informasi dasar bisnis</h2>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Business Name</p>
+                <p class="mt-3 text-sm font-medium text-white">UMKM Demo</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Industry</p>
+                <p class="mt-3 text-sm font-medium text-white">Retail &amp; F&amp;B</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Main Objective</p>
+                <p class="mt-3 text-sm font-medium text-white">Meningkatkan Profitabilitas Bisnis</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Default Period</p>
+                <p class="mt-3 text-sm font-medium text-white">Juni 2026</p>
+              </div>
+              <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4 sm:col-span-2">
+                <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Note</p>
+                <p class="mt-3 text-sm leading-6 text-cyan-50/90">Di fase ini belum ada fungsi simpan, tetapi layout ini menunjukkan area pengaturan profil bisnis yang nantinya bisa dipakai owner saat onboarding.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">KPI Category Setting</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Kelompok KPI yang dipakai</h2>
+            <div class="mt-6 grid gap-4">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <div class="flex items-center justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-semibold text-white">Finance</p>
+                    <p class="mt-1 text-sm text-slate-400">Net Profit Margin, Gross Margin, Operating Cost Ratio</p>
+                  </div>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-semibold text-emerald-300">Active</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <div class="flex items-center justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-semibold text-white">Sales</p>
+                    <p class="mt-1 text-sm text-slate-400">Revenue Growth, Conversion Rate, Average Transaction Value</p>
+                  </div>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-semibold text-emerald-300">Active</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <div class="flex items-center justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-semibold text-white">Customer</p>
+                    <p class="mt-1 text-sm text-slate-400">Repeat Purchase Rate, Complaint Rate, Service Response Time</p>
+                  </div>
+                  <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-[11px] font-semibold text-emerald-300">Active</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <div class="flex items-center justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-semibold text-white">Operations</p>
+                    <p class="mt-1 text-sm text-slate-400">COGS Ratio, Inventory Waste, Stock Accuracy</p>
+                  </div>
+                  <span class="rounded-full bg-amber-400/15 px-3 py-1 text-[11px] font-semibold text-amber-300">Review</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="mt-8 grid gap-6 xl:grid-cols-[.95fr_1.05fr]">
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Review Period Setting</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Atur ritme evaluasi KPI</h2>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Default Review</p>
+                <p class="mt-3 text-sm font-medium text-white">Mingguan untuk KPI operasional</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Executive Review</p>
+                <p class="mt-3 text-sm font-medium text-white">Bulanan untuk KPI outcome dan driver</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:col-span-2">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Prototype Preset</p>
+                <div class="mt-3 flex flex-wrap gap-2 text-sm">
+                  <span class="rounded-full bg-cyan-400 px-3 py-1.5 font-semibold text-slate-950">Weekly Ops Review</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Monthly Management Review</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Quarterly Strategic Review</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Team / Function Placeholder</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Struktur tim yang terkait dengan KPI</h2>
+            <div class="mt-6 grid gap-4">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-sm font-semibold text-white">Owner / Founder</p>
+                <p class="mt-2 text-sm text-slate-400">Memantau strategic objective, outcome KPI, dan prioritas tindakan bulanan.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-sm font-semibold text-white">Finance &amp; Operations</p>
+                <p class="mt-2 text-sm text-slate-400">Fokus pada margin, cost ratio, inventory waste, dan supplier cost control.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-sm font-semibold text-white">Sales &amp; Customer Ops</p>
+                <p class="mt-2 text-sm text-slate-400">Fokus pada conversion, repeat purchase, complaint handling, dan service response.</p>
+              </div>
+              <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                <p class="text-sm font-semibold text-white">Placeholder Note</p>
+                <p class="mt-2 text-sm text-cyan-50/90">Area ini disiapkan sebagai visual placeholder untuk pemetaan owner KPI per fungsi bisnis.</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="mt-8 rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+          <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Export Setting Placeholder</p>
+          <h2 class="mt-3 text-2xl font-semibold text-white">Atur format keluaran untuk review dan presentasi</h2>
+          <div class="mt-6 grid gap-4 md:grid-cols-3">
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+              <p class="text-sm font-semibold text-white">Dashboard Snapshot</p>
+              <p class="mt-2 text-sm text-slate-400">Placeholder untuk ekspor ringkasan dashboard bulanan.</p>
+              <span class="mt-4 inline-flex rounded-full border border-slate-700 px-3 py-1 text-[11px] font-semibold text-slate-300">PNG / PDF Placeholder</span>
+            </div>
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+              <p class="text-sm font-semibold text-white">KPI Tree Report</p>
+              <p class="mt-2 text-sm text-slate-400">Placeholder untuk ekspor struktur cause-effect KPI bagi owner atau konsultan.</p>
+              <span class="mt-4 inline-flex rounded-full border border-slate-700 px-3 py-1 text-[11px] font-semibold text-slate-300">PDF Placeholder</span>
+            </div>
+            <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-5">
+              <p class="text-sm font-semibold text-white">Presentation Mode</p>
+              <p class="mt-2 text-sm text-cyan-50/90">Placeholder untuk tampilan yang lebih ringkas saat dipakai pitching atau review tim.</p>
+              <span class="mt-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-[11px] font-semibold text-cyan-200">Future Option</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

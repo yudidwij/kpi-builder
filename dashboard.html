@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard KPI Builder untuk UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#020617",
+              night: "#0f172a",
+              panel: "#111c34",
+              line: "#1e293b",
+              glow: "#22d3ee",
+              brand: "#38bdf8",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(34,211,238,.16), 0 20px 60px rgba(56,189,248,.14)",
+            },
+            backgroundImage: {
+              grid: "linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-ink font-sans text-slate-100 antialiased">
+    <div class="relative min-h-screen overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,.14),_transparent_24%),radial-gradient(circle_at_top_right,_rgba(99,102,241,.16),_transparent_26%),linear-gradient(180deg,_#020617_0%,_#0f172a_52%,_#020617_100%)]"></div>
+      <div class="absolute inset-0 bg-grid bg-[size:64px_64px] opacity-20"></div>
+
+      <header class="relative z-10 border-b border-slate-800/80 bg-slate-950/70 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <div class="flex items-center gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+              <span class="flex rounded-2xl border border-cyan-400/20 bg-white/95 p-1.5 shadow-glow">
+                <img src="assets/images/hrcofy-logo.jpg" alt="Logo HRCofy" class="h-10 w-auto rounded-xl object-contain" />
+              </span>
+              <div>
+                <p class="text-sm font-semibold tracking-[0.22em] text-cyan-300">HRCOFY</p>
+                <p class="text-xs text-slate-400">Dashboard UMKM</p>
+              </div>
+            </a>
+            <nav class="hidden items-center gap-6 text-sm text-slate-300 xl:flex">
+              <a href="dashboard.html" class="text-cyan-300">Dashboard</a>
+              <a href="kpi-tree.html" class="transition hover:text-cyan-300">KPI Tree</a>
+              <a href="kpi-detail.html" class="transition hover:text-cyan-300">KPI Detail</a>
+              <a href="builder.html" class="transition hover:text-cyan-300">Builder</a>
+              <a href="settings.html" class="transition hover:text-cyan-300">Settings</a>
+            </nav>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="hidden rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200 md:inline-flex">
+              Export Placeholder
+            </button>
+            <div class="hidden rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 lg:block">
+              UMKM Demo
+            </div>
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-sm font-semibold text-white">
+              YD
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="relative z-10 mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-10">
+        <section class="grid gap-6 xl:grid-cols-[1.2fr_.8fr]">
+          <div class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+            <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+              <div class="max-w-2xl">
+                <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">KPI Dashboard</p>
+                <h1 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">Baca kesehatan bisnis dan hubungan antar KPI dalam satu layar.</h1>
+                <p class="mt-4 text-base leading-7 text-slate-300">
+                  UMKM Demo • Retail &amp; F&amp;B • Periode Juni 2026. Dashboard ini menyorot KPI outcome, driver, serta area operasional yang sedang menekan profitabilitas.
+                </p>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-2 xl:w-[21rem] xl:grid-cols-1">
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Last Updated</p>
+                  <p class="mt-2 text-sm font-medium text-white">5 Juli 2026 • 21:40 WIB</p>
+                </div>
+                <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Main Objective</p>
+                  <p class="mt-2 text-sm font-medium text-white">Meningkatkan Profitabilitas Bisnis</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Period Filter</p>
+                <div class="mt-3 flex flex-wrap gap-2 text-sm">
+                  <span class="rounded-full bg-cyan-400 px-3 py-1.5 font-semibold text-slate-950">Monthly</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Quarterly</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Yearly</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Business Area</p>
+                <div class="mt-3 flex flex-wrap gap-2 text-sm">
+                  <span class="rounded-full bg-cyan-400 px-3 py-1.5 font-semibold text-slate-950">All</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Sales</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Finance</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Operation</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Focus Area</p>
+                <p class="mt-3 text-sm font-medium text-white">Revenue Growth &amp; Cost Control</p>
+                <p class="mt-2 text-sm text-slate-400">Dua driver ini paling menentukan Net Profit Margin bulan ini.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Executive Note</p>
+                <p class="mt-3 text-sm font-medium text-white">Profit masih sehat, tapi mulai tertekan dari sisi repeat order dan biaya.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Business Health Score</p>
+                <h2 class="mt-3 text-5xl font-semibold text-white">78</h2>
+                <p class="mt-2 text-sm text-slate-300">Kondisi bisnis masih cukup sehat, tetapi beberapa KPI driver perlu perhatian cepat.</p>
+              </div>
+              <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-right">
+                <p class="text-xs text-emerald-300">Status</p>
+                <p class="mt-1 text-lg font-semibold text-white">Watch</p>
+              </div>
+            </div>
+            <div class="mt-6 h-3 rounded-full bg-slate-800">
+              <div class="h-3 w-[78%] rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500"></div>
+            </div>
+            <div class="mt-6 grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                <p class="text-xs text-slate-400">Revenue Achievement</p>
+                <p class="mt-2 text-2xl font-semibold text-white">91%</p>
+                <p class="mt-1 text-xs text-amber-300">Di bawah target pertumbuhan</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                <p class="text-xs text-slate-400">Profit Margin</p>
+                <p class="mt-2 text-2xl font-semibold text-white">18.4%</p>
+                <p class="mt-1 text-xs text-emerald-300">Sedikit di atas target</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+                <p class="text-xs text-slate-400">Cost Efficiency</p>
+                <p class="mt-2 text-2xl font-semibold text-white">73%</p>
+                <p class="mt-1 text-xs text-rose-300">Biaya operasional naik</p>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="mt-8">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            <article class="rounded-[26px] border border-emerald-400/20 bg-emerald-400/10 p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-white">Net Profit Margin</p>
+                  <p class="mt-1 text-xs text-emerald-200">Outcome KPI</p>
+                </div>
+                <span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">Healthy</span>
+              </div>
+              <p class="mt-5 text-3xl font-semibold text-white">18.4%</p>
+              <p class="mt-2 text-sm text-emerald-100/90">Target 18% • Achievement 102%</p>
+              <p class="mt-4 text-sm leading-6 text-emerald-50/90">Masih sehat, tetapi sensitif terhadap turunnya Revenue Growth dan naiknya Operating Cost Ratio.</p>
+            </article>
+
+            <article class="rounded-[26px] border border-amber-400/20 bg-amber-400/10 p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-white">Revenue Growth</p>
+                  <p class="mt-1 text-xs text-amber-100/80">Driver KPI</p>
+                </div>
+                <span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span>
+              </div>
+              <p class="mt-5 text-3xl font-semibold text-white">11.2%</p>
+              <p class="mt-2 text-sm text-amber-100/90">Target 14% • Achievement 80%</p>
+              <p class="mt-4 text-sm leading-6 text-amber-50/90">Mulai tertekan oleh Repeat Purchase Rate dan Conversion Rate yang belum konsisten.</p>
+            </article>
+
+            <article class="rounded-[26px] border border-emerald-400/20 bg-slate-900/80 p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-white">Gross Margin</p>
+                  <p class="mt-1 text-xs text-slate-400">Driver KPI</p>
+                </div>
+                <span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">Healthy</span>
+              </div>
+              <p class="mt-5 text-3xl font-semibold text-white">44.8%</p>
+              <p class="mt-2 text-sm text-slate-300">Target 43% • Achievement 104%</p>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Masih kuat berkat Supplier Cost Control, tetapi Inventory Waste perlu diawasi.</p>
+            </article>
+
+            <article class="rounded-[26px] border border-rose-400/20 bg-rose-400/10 p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-white">Operating Cost Ratio</p>
+                  <p class="mt-1 text-xs text-rose-100/80">Driver KPI</p>
+                </div>
+                <span class="rounded-full bg-rose-400/15 px-2.5 py-1 text-[11px] font-semibold text-rose-300">Critical</span>
+              </div>
+              <p class="mt-5 text-3xl font-semibold text-white">31%</p>
+              <p class="mt-2 text-sm text-rose-100/90">Target 26% • Achievement 84%</p>
+              <p class="mt-4 text-sm leading-6 text-rose-50/90">Biaya marketing dan respons layanan menekan efisiensi operasional.</p>
+            </article>
+
+            <article class="rounded-[26px] border border-cyan-400/20 bg-cyan-400/10 p-5">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <p class="text-sm font-semibold text-white">Repeat Purchase Rate</p>
+                  <p class="mt-1 text-xs text-cyan-100/80">Operational KPI</p>
+                </div>
+                <span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span>
+              </div>
+              <p class="mt-5 text-3xl font-semibold text-white">27%</p>
+              <p class="mt-2 text-sm text-cyan-100/90">Target 32% • Achievement 84%</p>
+              <p class="mt-4 text-sm leading-6 text-cyan-50/90">Turunnya repeat order menjadi sinyal awal bahwa revenue ke depan bisa ikut melemah.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="mt-8 grid gap-6 2xl:grid-cols-[1.1fr_.9fr]">
+          <div class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div>
+                <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">KPI Tree Preview</p>
+                <h2 class="mt-3 text-2xl font-semibold text-white">Arah sebab-akibat dari operasional ke profit.</h2>
+                <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
+                  Preview ini menunjukkan bagaimana KPI operasional mendorong KPI driver, lalu memengaruhi outcome KPI utama. Tujuannya bukan hanya melihat angka, tetapi membaca alurnya.
+                </p>
+              </div>
+              <a href="kpi-tree.html" class="inline-flex rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyan-400/40 hover:text-cyan-200">
+                Buka KPI Tree
+              </a>
+            </div>
+
+            <div class="mt-8 overflow-x-auto pb-2">
+              <div class="min-w-[880px]">
+                <div class="flex justify-center">
+                  <div class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-6 py-4 text-center">
+                    <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Strategic Objective</p>
+                    <p class="mt-2 text-lg font-semibold text-white">Meningkatkan Profitabilitas Bisnis</p>
+                  </div>
+                </div>
+                <div class="mx-auto mt-3 h-6 w-px bg-slate-700"></div>
+                <div class="flex justify-center">
+                  <div class="rounded-2xl border border-slate-700 bg-slate-900/80 px-6 py-4 text-center">
+                    <p class="text-xs uppercase tracking-[0.18em] text-slate-400">Outcome KPI</p>
+                    <p class="mt-2 text-lg font-semibold text-white">Net Profit Margin</p>
+                  </div>
+                </div>
+                <div class="mt-5 grid grid-cols-3 gap-4">
+                  <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-center">
+                    <p class="text-xs uppercase tracking-[0.18em] text-amber-200">Driver KPI</p>
+                    <p class="mt-2 font-semibold text-white">Revenue Growth</p>
+                  </div>
+                  <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-center">
+                    <p class="text-xs uppercase tracking-[0.18em] text-emerald-200">Driver KPI</p>
+                    <p class="mt-2 font-semibold text-white">Gross Margin</p>
+                  </div>
+                  <div class="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4 text-center">
+                    <p class="text-xs uppercase tracking-[0.18em] text-rose-200">Driver KPI</p>
+                    <p class="mt-2 font-semibold text-white">Operating Cost Ratio</p>
+                  </div>
+                </div>
+                <div class="mt-5 grid grid-cols-5 gap-3">
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-center">
+                    <p class="text-xs text-slate-500">Operational</p>
+                    <p class="mt-2 font-medium text-white">Conversion Rate</p>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-center">
+                    <p class="text-xs text-slate-500">Operational</p>
+                    <p class="mt-2 font-medium text-white">Average Transaction Value</p>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-center">
+                    <p class="text-xs text-slate-500">Operational</p>
+                    <p class="mt-2 font-medium text-white">COGS Ratio</p>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-center">
+                    <p class="text-xs text-slate-500">Operational</p>
+                    <p class="mt-2 font-medium text-white">Customer Complaint Rate</p>
+                  </div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-center">
+                    <p class="text-xs text-slate-500">Operational</p>
+                    <p class="mt-2 font-medium text-white">Service Response Time</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid gap-6">
+            <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Cause-Effect Insight</p>
+              <h2 class="mt-3 text-2xl font-semibold text-white">Dari keluhan pelanggan ke tekanan profit.</h2>
+              <div class="mt-6 space-y-4">
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Driver KPI</p>
+                  <p class="mt-2 text-sm font-semibold text-white">Repeat Purchase Rate turun dan Customer Complaint Rate naik.</p>
+                </div>
+                <div class="flex items-center justify-center text-cyan-300">
+                  <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-semibold">mengurangi</span>
+                </div>
+                <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-amber-200">Impact KPI</p>
+                  <p class="mt-2 text-sm font-semibold text-white">Revenue Growth mulai tertekan dan target pertumbuhan meleset.</p>
+                </div>
+                <div class="flex items-center justify-center text-cyan-300">
+                  <span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-semibold">berisiko menekan</span>
+                </div>
+                <div class="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.18em] text-rose-200">Business Result</p>
+                  <p class="mt-2 text-sm font-semibold text-white">Net Profit Margin bisa melemah jika biaya akuisisi tetap tinggi.</p>
+                </div>
+              </div>
+              <div class="mt-5 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                <p class="text-sm leading-7 text-cyan-50/95">
+                  Repeat Purchase Rate turun dan Customer Complaint Rate naik. Dampaknya, Revenue Growth mulai tertekan dan Net Profit Margin berisiko melemah.
+                </p>
+              </div>
+            </section>
+
+            <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Risk &amp; Alert</p>
+              <div class="mt-5 space-y-4">
+                <div class="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm font-semibold text-white">Operating Cost Ratio terlalu tinggi</p>
+                      <p class="mt-2 text-sm leading-6 text-rose-50/90">Biaya marketing dan respons layanan mendorong rasio biaya di atas batas aman.</p>
+                    </div>
+                    <span class="rounded-full bg-rose-400/15 px-2.5 py-1 text-[11px] font-semibold text-rose-300">Critical</span>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm font-semibold text-white">Repeat Purchase Rate melemah</p>
+                      <p class="mt-2 text-sm leading-6 text-amber-50/90">Retensi pelanggan belum cukup kuat untuk menopang pertumbuhan yang stabil.</p>
+                    </div>
+                    <span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-amber-400/20 bg-slate-900/80 p-4">
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-sm font-semibold text-white">Service Response Time lambat</p>
+                      <p class="mt-2 text-sm leading-6 text-slate-400">Keluhan yang lambat ditangani berpotensi menaikkan complaint rate dan menghambat repeat order.</p>
+                    </div>
+                    <span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="mt-8 grid gap-6 xl:grid-cols-[.85fr_1.15fr]">
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Recommended Action</p>
+            <h2 class="mt-3 text-2xl font-semibold text-white">Prioritaskan perbaikan pada KPI yang paling memengaruhi hasil.</h2>
+            <div class="mt-6 space-y-4">
+              <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                <p class="text-sm font-semibold text-white">1. Perbaiki respons layanan pelanggan</p>
+                <p class="mt-2 text-sm leading-6 text-cyan-50/90">Turunkan Service Response Time untuk menekan complaint rate dan menjaga repeat purchase rate.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-sm font-semibold text-white">2. Review efektivitas biaya marketing</p>
+                <p class="mt-2 text-sm leading-6 text-slate-400">Tahan aktivitas promosi yang mahal jika conversion rate belum membaik.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-sm font-semibold text-white">3. Dorong repeat order dari pelanggan aktif</p>
+                <p class="mt-2 text-sm leading-6 text-slate-400">Gunakan follow-up dan penawaran yang lebih presisi untuk menaikkan repeat purchase rate.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">KPI Table Summary</p>
+                <h2 class="mt-3 text-2xl font-semibold text-white">Ringkasan KPI yang paling relevan bulan ini.</h2>
+              </div>
+              <p class="text-sm text-slate-400">Semua data masih dummy/static prototype.</p>
+            </div>
+            <div class="mt-6 overflow-x-auto">
+              <table class="min-w-full text-left text-sm">
+                <thead>
+                  <tr class="border-b border-slate-800 text-slate-400">
+                    <th class="pb-3 pr-4 font-medium">KPI</th>
+                    <th class="pb-3 pr-4 font-medium">Tipe</th>
+                    <th class="pb-3 pr-4 font-medium">Actual</th>
+                    <th class="pb-3 pr-4 font-medium">Target</th>
+                    <th class="pb-3 pr-4 font-medium">Status</th>
+                    <th class="pb-3 font-medium">Impact</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800">
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Net Profit Margin</td>
+                    <td class="py-4 pr-4 text-slate-300">Outcome KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">18.4%</td>
+                    <td class="py-4 pr-4 text-slate-400">18%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">Healthy</span></td>
+                    <td class="py-4 text-slate-300">Sangat dipengaruhi driver revenue dan cost.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Revenue Growth</td>
+                    <td class="py-4 pr-4 text-slate-300">Driver KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">11.2%</td>
+                    <td class="py-4 pr-4 text-slate-400">14%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span></td>
+                    <td class="py-4 text-slate-300">Menekan outcome jika conversion dan retention lemah.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Gross Margin</td>
+                    <td class="py-4 pr-4 text-slate-300">Driver KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">44.8%</td>
+                    <td class="py-4 pr-4 text-slate-400">43%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">Healthy</span></td>
+                    <td class="py-4 text-slate-300">Menjaga margin outcome tetap stabil.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Operating Cost Ratio</td>
+                    <td class="py-4 pr-4 text-slate-300">Driver KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">31%</td>
+                    <td class="py-4 pr-4 text-slate-400">26%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-rose-400/15 px-2.5 py-1 text-[11px] font-semibold text-rose-300">Critical</span></td>
+                    <td class="py-4 text-slate-300">Melemahkan profit jika biaya tidak dikendalikan.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Repeat Purchase Rate</td>
+                    <td class="py-4 pr-4 text-slate-300">Operational KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">27%</td>
+                    <td class="py-4 pr-4 text-slate-400">32%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span></td>
+                    <td class="py-4 text-slate-300">Mempengaruhi kestabilan Revenue Growth.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Conversion Rate</td>
+                    <td class="py-4 pr-4 text-slate-300">Operational KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">4.8%</td>
+                    <td class="py-4 pr-4 text-slate-400">5.5%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span></td>
+                    <td class="py-4 text-slate-300">Membatasi pertumbuhan revenue dari traffic yang ada.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Average Transaction Value</td>
+                    <td class="py-4 pr-4 text-slate-300">Operational KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">Rp86.000</td>
+                    <td class="py-4 pr-4 text-slate-400">Rp90.000</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span></td>
+                    <td class="py-4 text-slate-300">Menahan kenaikan Revenue Growth walau transaksi tetap ada.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">COGS Ratio</td>
+                    <td class="py-4 pr-4 text-slate-300">Operational KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">55.2%</td>
+                    <td class="py-4 pr-4 text-slate-400">57%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-[11px] font-semibold text-emerald-300">Healthy</span></td>
+                    <td class="py-4 text-slate-300">Membantu Gross Margin tetap kuat.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Customer Complaint Rate</td>
+                    <td class="py-4 pr-4 text-slate-300">Operational KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">6.3%</td>
+                    <td class="py-4 pr-4 text-slate-400">4%</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-rose-400/15 px-2.5 py-1 text-[11px] font-semibold text-rose-300">Critical</span></td>
+                    <td class="py-4 text-slate-300">Menaikkan risiko turunnya repeat order.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 pr-4 font-medium text-white">Service Response Time</td>
+                    <td class="py-4 pr-4 text-slate-300">Operational KPI</td>
+                    <td class="py-4 pr-4 text-slate-200">19 menit</td>
+                    <td class="py-4 pr-4 text-slate-400">12 menit</td>
+                    <td class="py-4 pr-4"><span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">Watch</span></td>
+                    <td class="py-4 text-slate-300">Berpengaruh ke keluhan dan pengalaman pelanggan.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

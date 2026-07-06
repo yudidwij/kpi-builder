@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KPI Builder untuk UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#020617",
+              night: "#0f172a",
+              panel: "#111c34",
+              line: "#1e293b",
+              glow: "#22d3ee",
+              brand: "#38bdf8",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(34,211,238,.18), 0 20px 60px rgba(56,189,248,.18)",
+            },
+            backgroundImage: {
+              grid: "linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-ink font-sans text-slate-100 antialiased">
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,.22),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(99,102,241,.18),_transparent_24%),linear-gradient(180deg,_#020617_0%,_#0f172a_45%,_#020617_100%)]"></div>
+      <div class="absolute inset-0 bg-grid bg-[size:64px_64px] opacity-20"></div>
+
+      <header class="relative z-10">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+          <a href="#top" class="flex items-center gap-3">
+            <span class="flex rounded-2xl border border-cyan-400/20 bg-white/95 p-1.5 shadow-glow">
+              <img src="assets/images/hrcofy-logo.jpg" alt="Logo HRCofy" class="h-10 w-auto rounded-xl object-contain" />
+            </span>
+            <div>
+              <p class="text-sm font-semibold tracking-[0.22em] text-cyan-300">HRCOFY</p>
+              <p class="text-xs text-slate-400">KPI Builder untuk UMKM</p>
+            </div>
+          </a>
+          <div class="hidden items-center gap-8 text-sm text-slate-300 lg:flex">
+            <a href="#problem" class="transition hover:text-cyan-300">Masalah</a>
+            <a href="#solution" class="transition hover:text-cyan-300">Solusi</a>
+            <a href="#features" class="transition hover:text-cyan-300">Fitur</a>
+            <a href="#kpi-tree" class="transition hover:text-cyan-300">KPI Tree</a>
+            <a href="#faq" class="transition hover:text-cyan-300">FAQ</a>
+          </div>
+          <div class="hidden items-center gap-3 lg:flex">
+            <a href="#solution" class="rounded-full border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-sm font-medium text-slate-200 transition hover:border-cyan-400/40 hover:text-cyan-200">Lihat Cara Kerja</a>
+            <a href="dashboard.html" class="rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">Coba Dashboard</a>
+          </div>
+          <a href="dashboard.html" class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 lg:hidden">Coba</a>
+        </nav>
+      </header>
+
+      <main class="relative z-10" id="top">
+        <section class="mx-auto grid max-w-7xl gap-14 px-6 pb-24 pt-10 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:pb-32 lg:pt-14">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200">
+              KPI yang jelas, terukur, dan saling terhubung
+            </span>
+            <h1 class="mt-8 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+              Bangun KPI UMKM yang Jelas, Terukur, dan Saling Terhubung.
+            </h1>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+              KPI Builder membantu owner dan tim UMKM memahami hubungan sebab-akibat antar KPI, menemukan prioritas perbaikan, dan mengelola performa bisnis dalam satu dashboard modern.
+            </p>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href="dashboard.html" class="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3.5 text-base font-semibold text-slate-950 transition hover:bg-cyan-300">
+                Coba Dashboard
+              </a>
+              <a href="#solution" class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 px-6 py-3.5 text-base font-semibold text-slate-100 transition hover:border-cyan-400/40 hover:text-cyan-200">
+                Lihat Cara Kerja
+              </a>
+            </div>
+            <div class="mt-10 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 backdrop-blur">
+                <p class="text-2xl font-semibold text-white">16 KPI</p>
+                <p class="mt-2 text-sm text-slate-400">Contoh KPI dummy yang saling terhubung untuk Retail &amp; F&amp;B.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 backdrop-blur">
+                <p class="text-2xl font-semibold text-white">3 level</p>
+                <p class="mt-2 text-sm text-slate-400">Dari outcome sampai operasional agar prioritas lebih jelas.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-950/50 p-4 backdrop-blur">
+                <p class="text-2xl font-semibold text-white">1 arah</p>
+                <p class="mt-2 text-sm text-slate-400">Lihat akar masalah sebelum mengambil keputusan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-10 top-12 h-28 w-28 rounded-full bg-cyan-400/20 blur-3xl"></div>
+            <div class="absolute -right-8 bottom-8 h-32 w-32 rounded-full bg-indigo-500/20 blur-3xl"></div>
+            <div class="relative rounded-[32px] border border-slate-800 bg-slate-950/70 p-5 shadow-glow backdrop-blur">
+              <div class="rounded-[26px] border border-slate-800 bg-gradient-to-br from-slate-900 via-[#0f1b35] to-slate-950 p-5">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.22em] text-cyan-300">UMKM Demo</p>
+                    <h2 class="mt-2 text-xl font-semibold text-white">Juni 2026</h2>
+                  </div>
+                  <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-right">
+                    <p class="text-xs text-emerald-300">Business Health Score</p>
+                    <p class="text-2xl font-semibold text-white">78</p>
+                  </div>
+                </div>
+
+                <div class="mt-5 grid gap-3 sm:grid-cols-3">
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                    <p class="text-xs text-slate-400">Net Profit Margin</p>
+                    <p class="mt-2 text-2xl font-semibold text-white">18.4%</p>
+                    <p class="mt-1 text-xs text-emerald-300">Healthy • Target 18%</p>
+                  </div>
+                  <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4">
+                    <p class="text-xs text-amber-100/80">Revenue Growth</p>
+                    <p class="mt-2 text-2xl font-semibold text-white">11.2%</p>
+                    <p class="mt-1 text-xs text-amber-300">Watch • Target 14%</p>
+                  </div>
+                  <div class="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4">
+                    <p class="text-xs text-rose-100/80">Marketing Cost Ratio</p>
+                    <p class="mt-2 text-2xl font-semibold text-white">9.6%</p>
+                    <p class="mt-1 text-xs text-rose-300">Critical • Target 7%</p>
+                  </div>
+                </div>
+
+                <div class="mt-5 grid gap-4 lg:grid-cols-[1.15fr_.85fr]">
+                  <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-sm font-semibold text-white">Mini KPI Tree</h3>
+                      <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-[11px] text-cyan-200">Cause-Effect</span>
+                    </div>
+                    <div class="mt-4 space-y-3 text-sm">
+                      <div class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-3 text-center font-medium text-cyan-100">
+                        Meningkatkan Profitabilitas Bisnis
+                      </div>
+                      <div class="flex justify-center">
+                        <span class="h-6 w-px bg-slate-700"></span>
+                      </div>
+                      <div class="rounded-2xl border border-slate-700 bg-slate-950/70 p-3 text-center text-white">
+                        Net Profit Margin
+                      </div>
+                      <div class="grid gap-3 sm:grid-cols-3">
+                        <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-3 text-center text-amber-100">Revenue Growth</div>
+                        <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-3 text-center text-emerald-100">Gross Margin</div>
+                        <div class="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-3 text-center text-rose-100">Operating Cost Ratio</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4">
+                    <h3 class="text-sm font-semibold text-white">Insight Prioritas</h3>
+                    <div class="mt-4 rounded-2xl border border-slate-800 bg-slate-950/80 p-4">
+                      <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Akar Masalah</p>
+                      <p class="mt-2 text-sm font-medium text-white">Repeat Purchase Rate turun menekan Revenue Growth.</p>
+                      <p class="mt-2 text-sm leading-6 text-slate-400">
+                        Fokus pada layanan, follow-up, dan penanganan komplain untuk menjaga profit tetap sehat.
+                      </p>
+                    </div>
+                    <div class="mt-4 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                      <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Rekomendasi</p>
+                      <p class="mt-2 text-sm font-medium text-white">Prioritaskan KPI driver sebelum menambah promosi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute -left-6 top-10 hidden w-44 rounded-2xl border border-slate-800 bg-slate-950/85 p-4 shadow-glow xl:block">
+                <p class="text-xs text-slate-400">KPI Driver</p>
+                <p class="mt-2 text-lg font-semibold text-white">Conversion Rate</p>
+                <p class="mt-1 text-sm text-cyan-300">4.8% dari target 5.5%</p>
+              </div>
+              <div class="absolute -right-6 bottom-12 hidden w-48 rounded-2xl border border-slate-800 bg-slate-950/85 p-4 shadow-glow xl:block">
+                <p class="text-xs text-slate-400">Impact</p>
+                <p class="mt-2 text-sm font-medium text-white">Jika driver melemah, Net Profit Margin ikut tertekan.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="problem" class="border-t border-slate-800/80 bg-slate-950/40">
+          <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Masalah UMKM</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Jangan hanya pantau angka. Pahami penyebabnya.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-300">
+                Banyak owner punya target bisnis, tetapi belum punya sistem KPI yang bisa menjelaskan hubungan antara aktivitas harian, KPI driver, dan hasil akhirnya.
+              </p>
+            </div>
+            <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                <p class="text-sm font-semibold text-white">Target bisnis ada, KPI belum jelas</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Owner tahu ingin profit naik, tetapi belum tahu KPI mana yang benar-benar penting.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                <p class="text-sm font-semibold text-white">Omzet naik, profit belum tentu naik</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Tanpa melihat margin, diskon, dan biaya, pertumbuhan bisa terasa palsu.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                <p class="text-sm font-semibold text-white">Aktivitas tim banyak, dampak tidak terlihat</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Tim bergerak, tetapi kontribusi ke KPI utama belum terbaca dengan rapi.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                <p class="text-sm font-semibold text-white">KPI berdiri sendiri</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Tanpa cause-effect mapping, owner sulit melihat KPI mana penyebab dan mana hasil.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                <p class="text-sm font-semibold text-white">Prioritas tindakan membingungkan</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Keputusan sering reaktif karena akar masalah belum terlihat lebih dulu.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="solution" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
+            <div>
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Solusi</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Turunkan target bisnis menjadi KPI yang bisa dijelaskan ke tim.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-300">
+                KPI Builder membantu UMKM menurunkan target bisnis menjadi KPI utama dan KPI pendukung, lalu menghubungkannya ke dalam struktur yang mudah dipantau dan mudah dijelaskan.
+              </p>
+              <div class="mt-8 space-y-4">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/60 p-5">
+                  <p class="text-sm font-semibold text-white">Sebelum</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">KPI terpisah, laporan tersebar, dan owner sulit tahu apa yang harus dibenahi dulu.</p>
+                </div>
+                <div class="rounded-3xl border border-cyan-400/20 bg-cyan-400/10 p-5">
+                  <p class="text-sm font-semibold text-white">Sesudah</p>
+                  <p class="mt-2 text-sm leading-6 text-cyan-100/90">KPI saling terhubung, akar masalah lebih cepat terlihat, dan prioritas tindakan jadi lebih tajam.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">1. Tentukan tujuan bisnis</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Mulai dari objective seperti meningkatkan profitabilitas bisnis.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">2. Susun outcome KPI</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Pilih hasil utama yang paling mewakili tujuan tersebut.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">3. Hubungkan KPI driver</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Lihat indikator pendukung yang benar-benar mendorong hasil akhir.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">4. Pantau dan tindak lanjuti</p>
+                  <p class="mt-2 text-sm leading-6 text-slate-400">Baca KPI yang turun, pahami dampaknya, lalu putuskan aksi prioritas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="border-y border-slate-800/80 bg-slate-950/40">
+          <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Fitur Utama</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Bukan sekadar dashboard angka.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-300">
+                Setiap fitur dirancang supaya owner, manajer, dan konsultan bisa membaca performa bisnis dengan logika yang lebih strategis.
+              </p>
+            </div>
+            <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">KPI Dashboard</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Ringkasan performa bisnis dalam tampilan yang cepat dipahami.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">KPI Tree</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Struktur KPI dari objective sampai aktivitas operasional.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">Cause-Effect Mapping</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Pahami KPI mana yang mendorong hasil dan mana yang terdampak.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">Business Health Score</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Lihat kondisi bisnis secara cepat tanpa kehilangan konteks.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">KPI Alert</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Sorot KPI yang perlu perhatian sebelum berdampak lebih besar.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">Recommended Action</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Bantu owner menentukan langkah berikutnya secara lebih praktis.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">KPI Detail View</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Tiap KPI dijelaskan dengan target, status, dan hubungan dampaknya.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/75 p-5">
+                <p class="text-sm font-semibold text-white">UMKM-Friendly Interface</p>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Bahasa praktis, visual rapi, dan mudah dipakai untuk diskusi tim.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="kpi-tree" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
+            <div>
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">KPI Tree</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Lihat KPI mana yang mendorong profit, bukan hanya hasil akhirnya.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-300">
+                KPI Tree membantu owner melihat KPI mana yang menjadi driver dan KPI mana yang menjadi hasil. Dengan begitu, tim tidak berhenti di angka akhir, tetapi bisa membaca sebab di baliknya.
+              </p>
+              <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">Strategic Objective</p>
+                  <p class="mt-2 text-sm text-slate-400">Arah bisnis utama yang ingin dicapai.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">Outcome &amp; Driver KPI</p>
+                  <p class="mt-2 text-sm text-slate-400">Hasil utama dan penggerak yang memengaruhinya.</p>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5">
+                  <p class="text-sm font-semibold text-white">Operational KPI</p>
+                  <p class="mt-2 text-sm text-slate-400">Aktivitas yang bisa langsung ditindaklanjuti tim.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-[30px] border border-slate-800 bg-slate-950/75 p-5 shadow-glow">
+              <div class="space-y-4 text-sm">
+                <div class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4 text-center font-semibold text-cyan-100">
+                  Strategic Objective<br />
+                  <span class="text-base text-white">Meningkatkan Profitabilitas Bisnis</span>
+                </div>
+                <div class="flex justify-center"><span class="h-6 w-px bg-slate-700"></span></div>
+                <div class="rounded-2xl border border-slate-700 bg-slate-900/80 p-4 text-center text-white">
+                  Outcome KPI<br />
+                  <span class="text-base font-semibold">Net Profit Margin</span>
+                </div>
+                <div class="grid gap-3 md:grid-cols-3">
+                  <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-center text-amber-100">
+                    Driver KPI<br />
+                    <span class="font-semibold text-white">Revenue Growth</span>
+                  </div>
+                  <div class="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-center text-emerald-100">
+                    Driver KPI<br />
+                    <span class="font-semibold text-white">Gross Margin</span>
+                  </div>
+                  <div class="rounded-2xl border border-rose-400/20 bg-rose-400/10 p-4 text-center text-rose-100">
+                    Driver KPI<br />
+                    <span class="font-semibold text-white">Operating Cost Ratio</span>
+                  </div>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">Conversion Rate</div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">Average Transaction Value</div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">Repeat Purchase Rate</div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">COGS Ratio</div>
+                  <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-slate-200">Marketing Cost Ratio</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="border-y border-slate-800/80 bg-slate-950/40">
+          <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+              <div>
+                <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Preview Dashboard</p>
+                <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Satu tampilan untuk membaca kesehatan bisnis dan sumber masalahnya.</h2>
+                <p class="mt-4 text-lg leading-8 text-slate-300">
+                  Dashboard dirancang untuk menunjukkan kondisi bisnis, KPI yang sehat atau bermasalah, serta hubungan antar KPI yang perlu diprioritaskan.
+                </p>
+              </div>
+              <div class="rounded-[30px] border border-slate-800 bg-slate-950/75 p-5">
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Ringkasan</p>
+                    <p class="mt-3 text-3xl font-semibold text-white">78/100</p>
+                    <p class="mt-2 text-sm text-emerald-300">Business Health Score</p>
+                  </div>
+                  <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5">
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Prioritas</p>
+                    <p class="mt-3 text-lg font-semibold text-white">Revenue Growth tertekan</p>
+                    <p class="mt-2 text-sm text-slate-400">Dipengaruhi conversion dan repeat purchase rate.</p>
+                  </div>
+                  <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5 md:col-span-2">
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-slate-300">Net Profit Margin</span>
+                      <span class="text-emerald-300">18.4% / 18%</span>
+                    </div>
+                    <div class="mt-3 h-3 rounded-full bg-slate-800">
+                      <div class="h-3 w-[82%] rounded-full bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+                    </div>
+                    <div class="mt-5 flex items-center justify-between text-sm">
+                      <span class="text-slate-300">Operating Cost Ratio</span>
+                      <span class="text-rose-300">31% / 26%</span>
+                    </div>
+                    <div class="mt-3 h-3 rounded-full bg-slate-800">
+                      <div class="h-3 w-[68%] rounded-full bg-gradient-to-r from-rose-500 to-amber-400"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div class="max-w-3xl">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Use Case UMKM</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Relevan untuk retail, F&amp;B, sampai bisnis jasa.</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-300">
+              Tampilan prototype ini dirancang agar mudah dipakai saat diskusi internal, review performa, atau presentasi ke klien.
+            </p>
+          </div>
+          <div class="mt-10 grid gap-5 lg:grid-cols-3">
+            <div class="rounded-[28px] border border-slate-800 bg-slate-900/75 p-6">
+              <p class="text-sm font-semibold text-white">Retail UMKM</p>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Omzet naik, tetapi profit turun. KPI Tree membantu melihat COGS naik lebih cepat dan margin mulai menipis.</p>
+            </div>
+            <div class="rounded-[28px] border border-slate-800 bg-slate-900/75 p-6">
+              <p class="text-sm font-semibold text-white">F&amp;B</p>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Pelanggan baru banyak, tetapi repeat order rendah. KPI Tree menyorot layanan, complaint, dan response time.</p>
+            </div>
+            <div class="rounded-[28px] border border-slate-800 bg-slate-900/75 p-6">
+              <p class="text-sm font-semibold text-white">Bisnis Jasa</p>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Project bertambah, tetapi cashflow tetap ketat. Struktur KPI membantu membaca biaya dan siklus penagihan.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="border-y border-slate-800/80 bg-slate-950/40">
+          <div class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Pricing Placeholder</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Mulai dari paket yang sesuai tahap bisnis Anda.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-300">
+                Fase ini masih berupa placeholder visual tanpa payment integration, sesuai scope frontend awal.
+              </p>
+            </div>
+            <div class="mt-10 grid gap-5 lg:grid-cols-3">
+              <div class="rounded-[28px] border border-slate-800 bg-slate-900/75 p-6">
+                <p class="text-sm font-semibold text-white">Starter</p>
+                <p class="mt-3 text-sm text-slate-400">Untuk owner yang baru mulai menyusun KPI dasar.</p>
+                <p class="mt-6 text-3xl font-semibold text-white">Placeholder</p>
+              </div>
+              <div class="rounded-[28px] border border-cyan-400/20 bg-cyan-400/10 p-6 shadow-glow">
+                <p class="text-sm font-semibold text-white">Growth</p>
+                <p class="mt-3 text-sm text-cyan-100/90">Untuk bisnis yang ingin membaca hubungan KPI lebih detail.</p>
+                <p class="mt-6 text-3xl font-semibold text-white">Placeholder</p>
+              </div>
+              <div class="rounded-[28px] border border-slate-800 bg-slate-900/75 p-6">
+                <p class="text-sm font-semibold text-white">Consultant</p>
+                <p class="mt-3 text-sm text-slate-400">Untuk coach atau konsultan yang butuh alat diskusi dengan klien.</p>
+                <p class="mt-6 text-3xl font-semibold text-white">Placeholder</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" class="mx-auto max-w-5xl px-6 py-20 lg:px-8">
+          <div class="text-center">
+            <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">FAQ</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Pertanyaan yang sering muncul</h2>
+          </div>
+          <div class="mt-10 space-y-4">
+            <details class="group rounded-3xl border border-slate-800 bg-slate-900/70 p-6" open>
+              <summary class="cursor-pointer list-none text-base font-semibold text-white">Apa bedanya KPI Builder dengan dashboard biasa?</summary>
+              <p class="mt-4 text-sm leading-7 text-slate-400">KPI Builder tidak berhenti di angka ringkasan. Produk ini menekankan hubungan sebab-akibat antar KPI agar owner tahu KPI mana yang menjadi driver dan mana yang menjadi hasil.</p>
+            </details>
+            <details class="group rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+              <summary class="cursor-pointer list-none text-base font-semibold text-white">Apakah produk ini cocok untuk UMKM yang belum punya KPI formal?</summary>
+              <p class="mt-4 text-sm leading-7 text-slate-400">Ya. Prototype ini justru dirancang untuk membantu owner menurunkan target bisnis menjadi KPI yang lebih mudah dipahami dan dijelaskan ke tim.</p>
+            </details>
+            <details class="group rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+              <summary class="cursor-pointer list-none text-base font-semibold text-white">Apakah sudah ada backend atau integrasi data?</summary>
+              <p class="mt-4 text-sm leading-7 text-slate-400">Belum. Fase awal ini hanya static frontend prototype dengan dummy data, sesuai dokumen scope yang sudah disetujui.</p>
+            </details>
+            <details class="group rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+              <summary class="cursor-pointer list-none text-base font-semibold text-white">Apakah KPI Tree bisa dipakai untuk presentasi ke tim atau klien?</summary>
+              <p class="mt-4 text-sm leading-7 text-slate-400">Bisa. Salah satu tujuan utama produk ini adalah membuat struktur KPI lebih mudah dijelaskan secara visual dan logis.</p>
+            </details>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+          <div class="rounded-[36px] border border-cyan-400/20 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,.18),_transparent_38%),linear-gradient(135deg,_rgba(15,23,42,.96),_rgba(10,15,30,.96))] p-8 shadow-glow sm:p-12">
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Final CTA</p>
+              <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">Hubungkan target bisnis dengan aktivitas harian tim.</h2>
+              <p class="mt-4 text-lg leading-8 text-slate-300">
+                Temukan akar masalah sebelum mengambil keputusan. Bangun KPI Tree yang lebih jelas, modern, dan mudah dijelaskan bersama tim Anda.
+              </p>
+            </div>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a href="dashboard.html" class="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3.5 text-base font-semibold text-slate-950 transition hover:bg-cyan-300">Coba Dashboard</a>
+              <a href="#kpi-tree" class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 px-6 py-3.5 text-base font-semibold text-slate-100 transition hover:border-cyan-400/40 hover:text-cyan-200">Lihat Cara Kerja</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-slate-800/80 bg-slate-950/70">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+          <div>
+            <p class="font-semibold tracking-[0.2em] text-cyan-300">KPI BUILDER UNTUK UMKM</p>
+            <p class="mt-2 max-w-xl">Prototype frontend-first untuk membantu owner membaca hubungan sebab-akibat antar KPI secara lebih strategis.</p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="#problem" class="transition hover:text-cyan-200">Masalah</a>
+            <a href="#features" class="transition hover:text-cyan-200">Fitur</a>
+            <a href="#kpi-tree" class="transition hover:text-cyan-200">KPI Tree</a>
+            <a href="#faq" class="transition hover:text-cyan-200">FAQ</a>
+            <a href="dashboard.html" class="transition hover:text-cyan-200">Coba Dashboard</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

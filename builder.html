@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KPI Builder Prototype - KPI Builder untuk UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              ink: "#020617",
+              night: "#0f172a",
+              panel: "#111c34",
+              line: "#1e293b",
+              glow: "#22d3ee",
+              brand: "#38bdf8",
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(34,211,238,.16), 0 20px 60px rgba(56,189,248,.14)",
+            },
+            backgroundImage: {
+              grid: "linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-ink font-sans text-slate-100 antialiased">
+    <div class="relative min-h-screen overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,.14),_transparent_24%),radial-gradient(circle_at_top_right,_rgba(99,102,241,.16),_transparent_26%),linear-gradient(180deg,_#020617_0%,_#0f172a_52%,_#020617_100%)]"></div>
+      <div class="absolute inset-0 bg-grid bg-[size:64px_64px] opacity-20"></div>
+
+      <header class="relative z-10 border-b border-slate-800/80 bg-slate-950/70 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <div class="flex items-center gap-4">
+            <a href="index.html" class="flex items-center gap-3">
+              <span class="flex rounded-2xl border border-cyan-400/20 bg-white/95 p-1.5 shadow-glow">
+                <img src="assets/images/hrcofy-logo.jpg" alt="Logo HRCofy" class="h-10 w-auto rounded-xl object-contain" />
+              </span>
+              <div>
+                <p class="text-sm font-semibold tracking-[0.22em] text-cyan-300">HRCOFY</p>
+                <p class="text-xs text-slate-400">Prototype Builder</p>
+              </div>
+            </a>
+            <nav class="hidden items-center gap-6 text-sm text-slate-300 xl:flex">
+              <a href="dashboard.html" class="transition hover:text-cyan-300">Dashboard</a>
+              <a href="kpi-tree.html" class="transition hover:text-cyan-300">KPI Tree</a>
+              <a href="kpi-detail.html" class="transition hover:text-cyan-300">KPI Detail</a>
+              <a href="builder.html" class="text-cyan-300">Builder</a>
+              <a href="settings.html" class="transition hover:text-cyan-300">Settings</a>
+            </nav>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="hidden rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 lg:block">
+              Static Prototype • No Submission
+            </div>
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-sm font-semibold text-white">
+              YD
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="relative z-10 mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-10">
+        <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+            <div class="max-w-3xl">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">KPI Builder Prototype</p>
+              <h1 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">Bangun KPI baru dan pahami posisinya di dalam KPI Tree.</h1>
+              <p class="mt-4 text-base leading-7 text-slate-300">
+                Halaman ini mensimulasikan bagaimana owner atau manajer menyusun KPI baru dari tujuan bisnis, memilih tipe KPI, lalu menghubungkannya ke parent KPI agar hubungan sebab-akibat tetap jelas.
+              </p>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-2 xl:w-[22rem] xl:grid-cols-1">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Business Context</p>
+                <p class="mt-2 text-sm font-medium text-white">UMKM Demo • Retail &amp; F&amp;B</p>
+              </div>
+              <div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-4">
+                <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Main Goal</p>
+                <p class="mt-2 text-sm font-medium text-white">Meningkatkan Profitabilitas Bisnis</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-8 grid gap-6 xl:grid-cols-[1.02fr_.98fr]">
+          <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Form Prototype</p>
+                <h2 class="mt-3 text-2xl font-semibold text-white">Input KPI baru</h2>
+              </div>
+              <span class="rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-[11px] font-semibold text-slate-300">Dummy Input</span>
+            </div>
+
+            <div class="mt-6 grid gap-4 md:grid-cols-2">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Business Goal</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Meningkatkan Profitabilitas Bisnis
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Business Type</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Retail &amp; F&amp;B
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Function Area</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Customer Experience
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Role / Department</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Customer Operations
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">KPI Category</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Customer Retention
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">KPI Type</label>
+                <div class="mt-3 flex flex-wrap gap-2 text-sm">
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Outcome KPI</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Driver KPI</span>
+                  <span class="rounded-full bg-cyan-400 px-3 py-1.5 font-semibold text-slate-950">Operational KPI</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Activity Indicator</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:col-span-2">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">KPI Name</label>
+                <div class="mt-3 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-medium text-white">
+                  Repeat Purchase Rate
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:col-span-2">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Formula</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  (Jumlah pelanggan yang membeli kembali / Total pelanggan aktif) × 100%
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Target</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  32%
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Review Period</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Mingguan
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Linked Parent KPI</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Revenue Growth
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Linked Child KPI</label>
+                <div class="mt-3 rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-white">
+                  Service Follow-Up Completion
+                </div>
+              </div>
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:col-span-2">
+                <label class="text-xs uppercase tracking-[0.18em] text-slate-500">Priority Level</label>
+                <div class="mt-3 flex flex-wrap gap-2 text-sm">
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Low</span>
+                  <span class="rounded-full border border-slate-700 px-3 py-1.5 text-slate-300">Medium</span>
+                  <span class="rounded-full bg-amber-400 px-3 py-1.5 font-semibold text-slate-950">High</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="grid gap-6">
+            <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6 shadow-glow">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Preview KPI Card</p>
+              <div class="mt-5 rounded-[26px] border border-cyan-400/20 bg-cyan-400/10 p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-semibold text-white">Repeat Purchase Rate</p>
+                    <p class="mt-1 text-xs text-cyan-100/80">Operational KPI • Customer Retention</p>
+                  </div>
+                  <span class="rounded-full bg-amber-400/15 px-2.5 py-1 text-[11px] font-semibold text-amber-300">High Priority</span>
+                </div>
+                <p class="mt-5 text-3xl font-semibold text-white">Target 32%</p>
+                <p class="mt-2 text-sm text-cyan-50/90">Parent KPI: Revenue Growth</p>
+                <p class="mt-4 text-sm leading-6 text-cyan-50/90">
+                  KPI ini dipakai untuk mengukur loyalitas pelanggan aktif dan membantu menjaga pertumbuhan revenue yang lebih efisien.
+                </p>
+              </div>
+            </section>
+
+            <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Preview KPI Tree Position</p>
+              <div class="mt-5 space-y-4">
+                <div class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4 text-center">
+                  <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Strategic Objective</p>
+                  <p class="mt-2 font-semibold text-white">Meningkatkan Profitabilitas Bisnis</p>
+                </div>
+                <div class="flex justify-center"><span class="h-6 w-px bg-slate-700"></span></div>
+                <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4 text-center">
+                  <p class="text-xs uppercase tracking-[0.18em] text-amber-200">Driver KPI</p>
+                  <p class="mt-2 font-semibold text-white">Revenue Growth</p>
+                </div>
+                <div class="flex justify-center"><span class="h-6 w-px bg-slate-700"></span></div>
+                <div class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4 text-center shadow-glow">
+                  <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Operational KPI</p>
+                  <p class="mt-2 font-semibold text-white">Repeat Purchase Rate</p>
+                </div>
+                <div class="flex justify-center"><span class="h-6 w-px bg-slate-700"></span></div>
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-center">
+                  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Activity Indicator</p>
+                  <p class="mt-2 font-semibold text-white">Service Follow-Up Completion</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="rounded-[30px] border border-slate-800 bg-slate-950/70 p-6">
+              <p class="text-sm font-medium uppercase tracking-[0.24em] text-cyan-300">Cause-Effect Note</p>
+              <div class="mt-5 rounded-[26px] border border-slate-800 bg-slate-900/80 p-5">
+                <p class="text-sm leading-7 text-slate-300">
+                  Jika <span class="font-semibold text-white">Repeat Purchase Rate</span> membaik, maka <span class="font-semibold text-white">Revenue Growth</span> menjadi lebih stabil karena bisnis mendapat pendapatan ulang dari pelanggan yang sudah ada. Jika KPI ini melemah, bisnis cenderung lebih bergantung pada akuisisi baru dan biaya pertumbuhan menjadi lebih mahal.
+                </p>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
